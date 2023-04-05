@@ -30,35 +30,30 @@ class App extends React.Component {
 
 
   render() {
-    return(
-      <>
-         {/* <Nav/> */}
-      <Router>
-        {/* <Login/>
-        <Profile />
-        <Logout/> */}
-        <Routes>
-          <Route 
-            exact path="/"
-            element={<DropDownList updateSelectedPark={this.updateSelectedPark} />}
-          >
-          </Route>
-          <Route
-            exact path="/ParkData"
-            element={<ParkData selectedPark={this.state.selectedPark} />}
-          >
-          </Route>
-          <Route
-            exact path="/About"
-            element={<About />}
-          >
-          </Route>
-        </Routes>
-        {/* <Footer /> */}
-      </Router>
-    </>
-    )
-  }
-}
+    return() {
+         /* <Nav/> */}
+      // <Router>
+        // <Login/>
+        // <Profile />
+        // <Logout/> */}
+        // {<Routes>
+          // <Route 
+          //   exact path="/"
+          //   element={<DropDownList updateSelectedPark={this.updateSelectedPark} />}
+          // >
+          // </Route>
+          // <Route
+          //   exact path="/ParkData"
+          //   element={<ParkData selectedPark={this.state.selectedPark} />}
+          // >
+          // </Route>
+          // <Route
+          //   exact path="/About"
+          //   element={<About />}
+          // >
+          // </Route>
+        // </Routes>
+      // </Router>
+// }
 
 export default App
