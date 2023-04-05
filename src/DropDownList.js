@@ -34,43 +34,6 @@ class DropDownList extends React.Component {
   }
 
 
-  // getParkData = async (id) => {
-  //   try {
-
-  //     let url = `${process.env.REACT_APP_SERVER}/activities/parks?activityID=${id}`;
-
-  //     let parkData = await axios.get(url);
-
-  //     this.setState({
-  //       parkData: parkData,
-  //       parkCode: parkData.parkCode
-  //     })
-
-  //     this.getImagesDescriptions(this.state.parkCode);
-
-  //   } catch (error) {
-  //     console.error(error.response);
-  //   }
-  // }
-
-  // getImagesDescriptions = async (parkCode) => {
-  //   try {
-
-  //     let url = `${process.env.REACT_APP_SERVER}/parks?parkCode=${parkCode}`;
-
-  //     let imageDescrData = await axios.get(url);
-
-  //     this.setState({
-  //       imageDescriptions: imageDescrData
-  //     })
-
-  //   } catch (error) {
-  //     console.error(error.response);
-  //   }
-  // }
-
-
-
   componentDidMount() {
     this.getActivities();
   }
@@ -88,28 +51,13 @@ class DropDownList extends React.Component {
         parkCode: parkData.data.parkCode
       })
 
-      // this.getImagesDescriptions(this.state.parkCode);
+    
 
     } catch (error) {
       console.error(error.response);
     }
   }
 
-  // getParkDetails = async(parkObj) => {
-  //   try {
-
-  //         let url = `${process.env.REACT_APP_SERVER}/descriptionImages?parkCode=${parkObj.parkCode}`;
-    
-  //         let imageDescrData = await axios.get(url);
-    
-  //         this.setState({
-  //           imageDescriptions: imageDescrData.data
-  //         })
-    
-  //       } catch (error) {
-  //         console.error(error.response);
-  //       }
-  // }
 
   handleParkNavigation = async (park) => {
     // await this.getParkDetails(park)
@@ -117,6 +65,8 @@ class DropDownList extends React.Component {
     this.props.updateSelectedPark(park)
     this.props.navigate('/ParkData')
   }
+
+
 
   render() {
     console.log(this.state);
@@ -138,6 +88,7 @@ class DropDownList extends React.Component {
         this.state.parkData.map(park => <p onClick={() => {this.handleParkNavigation(park)}}>{park.name}</p>)
         : null
       }
+     
       </>
 
     );
@@ -149,3 +100,19 @@ class DropDownList extends React.Component {
 
 
 export default withRouter(DropDownList);
+
+  // getParkDetails = async(parkObj) => {
+  //   try {
+
+  //         let url = `${process.env.REACT_APP_SERVER}/descriptionImages?parkCode=${parkObj.parkCode}`;
+    
+  //         let imageDescrData = await axios.get(url);
+    
+  //         this.setState({
+  //           imageDescriptions: imageDescrData.data
+  //         })
+    
+  //       } catch (error) {
+  //         console.error(error.response);
+  //       }
+  // }

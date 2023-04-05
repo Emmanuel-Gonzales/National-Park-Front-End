@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Button from 'react-bootstrap/Button';
 
 // handleParkSubmit = (event) => {
 
@@ -13,7 +14,7 @@ class ParkData extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      parkData: {}
+      imageDescriptionWeatherData: {}
     }
   }
 
@@ -25,7 +26,7 @@ class ParkData extends React.Component {
           let imageDescrData = await axios.get(url);
     
           this.setState({
-            parkData: imageDescrData.data
+            imageDescriptionWeatherData: imageDescrData.data
           })
     
         } catch (error) {
@@ -40,10 +41,10 @@ class ParkData extends React.Component {
   createUserPark = async () => {
     let parkObj = {
       parkName: this.props.selectedPark.name,
-     location: this.props.parkData.locations,
-     parkWebsite: this.state.parkData.url,
-     parkDescription: this.state.parkData.description,
-     parkImages: this.state.imageDescriptions.images,
+     location: this.props.selectedPark.locations,
+     parkWebsite: this.props.selectedPark.url,
+     parkDescription: this.state.imageDescriptionWeatherData.description,
+     parkImages: this.state.imageDescriptionWeatherData.images,
      parkCommentary: '',
      parkVisited: false
    }
@@ -66,7 +67,11 @@ class ParkData extends React.Component {
     console.log(this.state)
     return(
       <>
-      {Object.keys(this.state.parkData).length > 0 && <img src={this.state.parkData.images[0].url} />}
+      {Object.keys(this.state.imageDescriptionWeatherData).length > 0 && <img src={this.state.imageDescriptionWeatherData.images[0].url} />}
+      {<h1>{this.props.selectedPark.name}</h1>}
+      {<p>{this.state.imageDescriptionWeatherData.description}</p>}
+      <Button variant="success">Save to My Parks</Button>
+      
       </>
 
     )
