@@ -14,8 +14,7 @@ class MyParks extends React.Component {
   render() {
     return (
       <>
-             {<p>{this.props.imageDescriptionWeatherData.description}</p>}
-        {console.log(this.props.imageDescriptionWeatherData.descriptions)}
+            
         {this.props.myParks.map((park, idx) => {
           
           return (

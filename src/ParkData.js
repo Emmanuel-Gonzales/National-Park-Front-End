@@ -48,10 +48,10 @@ class ParkData extends React.Component {
       <>
 
       {<h1>{this.props.selectedPark.name}</h1>}
-      <Carousel> 
+      {/* <Carousel> 
       {Object.keys(this.state.imageDescriptionWeatherData).length > 0 && this.state.imageDescriptionWeatherData.images.map(image => <Carousel.Item><img src= {image.url} width="300px"/></Carousel.Item>)}
-      </Carousel>
-      {<p>{this.state.imageDescriptionWeatherData.description}</p>}
+      </Carousel> */}
+      {/* {<p>{this.state.imageDescriptionWeatherData.description}</p>} */}
       <Button variant="success">Save to My Parks</Button>
 
 

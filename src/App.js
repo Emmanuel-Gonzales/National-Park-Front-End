@@ -139,7 +139,7 @@ class App extends React.Component {
               <Route
               exact path="/MyParks"
               element={<MyParks
-                imageDescriptionWeatherData={this.state.imageDescriptionWeatherData}
+               
                 myParks={this.state.myParks}
                 
                 updateUserPark={this.updateUserPark}
