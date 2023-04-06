@@ -165,7 +165,7 @@ class App extends React.Component {
       </div>
         <div className='page-container'>
       {/* <Footer/> */}
-    {/* </div> */} */}
+    {/* </div> */}
       </>
       )
     }
