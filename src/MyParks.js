@@ -3,13 +3,21 @@ import MyParkCard from './MyParkCard';
 
 
 class MyParks extends React.Component {
-
-
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     tempParks: this.props.myParks
+  //   }
+  // }
+  
 
   render() {
     return (
       <>
+             {<p>{this.props.imageDescriptionWeatherData.description}</p>}
+        {console.log(this.props.imageDescriptionWeatherData.descriptions)}
         {this.props.myParks.map((park, idx) => {
+          
           return (
             <MyParkCard
               park={park}

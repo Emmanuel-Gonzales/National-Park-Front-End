@@ -30,7 +30,7 @@ class ParkData extends React.Component {
 
       let createdPark = await axios.post(url, parkObj);
 
-      
+      console.log(createdPark, "created park");
       this.props.handleCreatePark(createdPark);
 
       alert("Park Saved!");
@@ -43,7 +43,7 @@ class ParkData extends React.Component {
 
   render() {
 
-    console.log(this.state)
+
     return (
       <>
 

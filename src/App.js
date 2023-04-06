@@ -45,10 +45,6 @@ class App extends React.Component {
       console.error(error.response);
     }
   }
-
-  componentDidMount() {
-    this.getParkDetails(this.state.selectedPark)
-  }
   
   selectedParkFunction = (parkObj) => {
     this.setState({
@@ -57,10 +53,15 @@ class App extends React.Component {
   }
 
   handleCreatePark = (createdPark) => {
-    console.log(createdPark);
+    console.log(createdPark.data);
     this.setState({
       myParks: [...this.state.myParks, createdPark.data]
     })
+  }
+  
+  getMyParks = () => {
+    let temp = this.state.myParks;
+    return temp;
   }
 
   updateUserPark = async (parkDataToUpdate) => {
@@ -138,6 +139,7 @@ class App extends React.Component {
               <Route
               exact path="/MyParks"
               element={<MyParks
+                imageDescriptionWeatherData={this.state.imageDescriptionWeatherData}
                 myParks={this.state.myParks}
                 
                 updateUserPark={this.updateUserPark}
