@@ -1,0 +1,21 @@
+h1{
+  margin: auto;
+  text-align: center;
+}
+
+.carousel{
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+
+.image-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+img{
+  height: 30em;
+  object-fit: cover;
+}
