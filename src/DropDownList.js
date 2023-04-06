@@ -59,10 +59,11 @@ class DropDownList extends React.Component {
   }
 
 
-  handleParkNavigation = async (park) => {
-    // await this.getParkDetails(park)
-    // console.log(park)
-    this.props.updateSelectedPark(park)
+  handleParkNavigation = (park) => {
+    console.log(park)
+    this.props.getParkDetails(park)
+    
+    this.props.selectedParkFunction(park)
     this.props.navigate('/ParkData')
   }
 
@@ -78,14 +79,15 @@ class DropDownList extends React.Component {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            {this.state.activities.length && this.state.activities.map(activity => <Dropdown.Item eventKey={activity.id}>{activity.name}</Dropdown.Item>)}
+            {this.state.activities.length && this.state.activities.map(activity => <Dropdown.Item key={`item-${activity.id}`} eventKey={activity.id}>{activity.name}</Dropdown.Item>)}
+
             {/* <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
           <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item> */}
           </Dropdown.Menu>
         </Dropdown>
         {this.state.parkData.length > 0 ? 
-        this.state.parkData.map(park => <p onClick={() => {this.handleParkNavigation(park)}}>{park.name}</p>)
+        this.state.parkData.map(park => <p key={`item-${park.name}`}  onClick={() => {this.handleParkNavigation(park)}}>{park.name}</p>)
         : null
       }
      
