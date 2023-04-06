@@ -2,7 +2,12 @@ import React from "react";
 import axios from "axios";
 import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
+import Pagination from 'react-bootstrap/Pagination';
+import Card from 'react-bootstrap/Card';
 import './ParkData.css'
+
+// handleParkSubmit = (event) => {
+
 
 
 class ParkData extends React.Component {
@@ -46,15 +51,17 @@ class ParkData extends React.Component {
     console.log(this.state)
     return (
       <>
-
       {<h1>{this.props.selectedPark.name}</h1>}
-      <Carousel> 
-      {Object.keys(this.state.imageDescriptionWeatherData).length > 0 && this.state.imageDescriptionWeatherData.images.map(image => <Carousel.Item><img src= {image.url} width="300px"/></Carousel.Item>)}
-      </Carousel>
+      <a href={this.props.selectedPark.url}>Visit Park Webpage</a>
       {<p>{this.state.imageDescriptionWeatherData.description}</p>}
+      <Carousel> 
+      {Object.keys(this.state.imageDescriptionWeatherData).length > 0 && this.state.imageDescriptionWeatherData.images.map(image => 
+      <Carousel.Item>
+        <div className="image-container">
+          <img src= {image.url} alt={image.altText}/>
+          </div></Carousel.Item>)}
+      </Carousel>
       <Button variant="success">Save to My Parks</Button>
-
-
       </>
 
     )
