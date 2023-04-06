@@ -2,8 +2,6 @@ import React from "react";
 import axios from "axios";
 import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
-import Pagination from 'react-bootstrap/Pagination';
-import Card from 'react-bootstrap/Card';
 import './ParkData.css'
 
 // handleParkSubmit = (event) => {
@@ -48,14 +46,14 @@ class ParkData extends React.Component {
 
   render() {
 
-    console.log(this.state)
+    console.log(this.props)
     return (
       <>
       {<h1>{this.props.selectedPark.name}</h1>}
       <a href={this.props.selectedPark.url}>Visit Park Webpage</a>
-      {<p>{this.state.imageDescriptionWeatherData.description}</p>}
+      {<p>{this.props.imageDescriptionWeatherData.description}</p>}
       <Carousel> 
-      {Object.keys(this.state.imageDescriptionWeatherData).length > 0 && this.state.imageDescriptionWeatherData.images.map(image => 
+      {Object.keys(this.props.imageDescriptionWeatherData).length > 0 && this.props.imageDescriptionWeatherData.images.map(image => 
       <Carousel.Item>
         <div className="image-container">
           <img src= {image.url} alt={image.altText}/>
