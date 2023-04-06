@@ -9,67 +9,47 @@ import './ParkData.css'
 // handleParkSubmit = (event) => {
 
 
+
 class ParkData extends React.Component {
-  //   let parkObj = {
-
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     imageDescriptionWeatherData: {}
   //   }
-  //   this.props.createPark(parkObj);
   // }
-  constructor(props){
-    super(props);
-    this.state = {
-      imageDescriptionWeatherData: {}
-    }
-  }
 
-  getParkDetails = async(parkObj) => {
-    try {
-
-          let url = `${process.env.REACT_APP_SERVER}/descriptionImages?parkCode=${parkObj.parkCode}`;
-    
-          let imageDescrData = await axios.get(url);
-    
-          this.setState({
-            imageDescriptionWeatherData: imageDescrData.data
-          })
-    
-        } catch (error) {
-          console.error(error.response);
-        }
-  }
-
-  componentDidMount(){
-    this.getParkDetails(this.props.selectedPark)
-  }
-  
   createUserPark = async () => {
     let parkObj = {
       parkName: this.props.selectedPark.name,
-     location: this.props.selectedPark.locations,
-     parkWebsite: this.props.selectedPark.url,
-     parkDescription: this.state.imageDescriptionWeatherData.description,
-     parkImages: this.state.imageDescriptionWeatherData.images,
-     parkCommentary: '',
-     parkVisited: false
-   }
-    
+      location: this.props.selectedPark.locations,
+      parkWebsite: this.props.selectedPark.url,
+      parkDescription: this.props.imageDescriptionWeatherData.description,
+      parkImages: this.props.imageDescriptionWeatherData.images[0].url,
+      parkWeather: this.props.imageDescriptionWeatherData.weather,
+      parkCommentary: '',
+      parkVisited: false
+    }
+
     try {
       let url = `${process.env.REACT_APP_SERVER}/parks`;
-  
-      let createdPark = await axios.post(url, parkObj);
-  
-      alert("Park Saved!");
 
+      let createdPark = await axios.post(url, parkObj);
+
+      
+      this.props.handleCreatePark(createdPark);
+
+      alert("Park Saved!");
+     
     } catch (error) {
-        alert("Can't save park.");
-        console.log(error.message)
-      }
+      alert("Can't save park.");
+      console.log(error.message)
+    }
   }
 
-  render(){
+  render() {
 
     console.log(this.state)
-    return(
+    return (
       <>
       {<h1>{this.props.selectedPark.name}</h1>}
       <a href={this.props.selectedPark.url}>Visit Park Webpage</a>
