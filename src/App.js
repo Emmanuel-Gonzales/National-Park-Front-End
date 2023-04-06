@@ -3,13 +3,15 @@ import Nav from './Nav';
 import axios from "axios";
 import ParkData from './ParkData';
 import DropDownList from './DropDownList';
-import Footer from './Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import About from './About';
+import "./App.css";
+import Button from 'react-bootstrap/Button';
 import MyParks from './MyParks';
 import Login from "./Login";
 import Logout from "./Logout";
 import Profile from "./Profile";
+import Footer from './Footer';
 import {
   BrowserRouter as Router,
   Routes,
@@ -131,9 +133,9 @@ class App extends React.Component {
             <Route
               exact path="/About"
               element={<About />}
-            >
+              >
             </Route>
-            <Route
+              <Route
               exact path="/MyParks"
               element={<MyParks
                 myParks={this.state.myParks}
@@ -143,13 +145,28 @@ class App extends React.Component {
               />}
             >
             </Route>
-
           </Routes>
-          {/* <Footer /> */}
+          {/* <Footer/> */}
         </Router>
+        {/* <div className='hero-container'> */}
+        {/* <h1>WELCOME TO YOUR NATIONAL PARKS</h1>
+      <p>SEARCH DIRECTORY</p>
+      <div className='hero-btns'>
+        <Button
+          className='btns'
+          buttonStyle='btn--outline'
+          buttonSize='btn--large'
+        >
+          GET STARTED
+        </Button>
+        </div>
+      </div>
+        <div className='page-container'>
+      {/* <Footer/> */}
+    {/* </div> */} */}
       </>
-    )
+      )
+    }
   }
-}
-
-export default App
+  
+  export default App

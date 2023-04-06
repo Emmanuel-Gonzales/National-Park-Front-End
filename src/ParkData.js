@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Button from 'react-bootstrap/Button';
+import Carousel from 'react-bootstrap/Carousel';
+import './ParkData.css'
 
 
 class ParkData extends React.Component {
@@ -44,10 +46,14 @@ class ParkData extends React.Component {
     console.log(this.state)
     return (
       <>
-        {Object.keys(this.props.imageDescriptionWeatherData).length > 0 && <img src={this.props.imageDescriptionWeatherData.images[0].url} />}
-        {<h1>{this.props.selectedPark.name}</h1>}
-        {<p>{this.props.imageDescriptionWeatherData.description}</p>}
-        <Button onClick={this.createUserPark} variant="success">Save to My Parks</Button>
+
+      {<h1>{this.props.selectedPark.name}</h1>}
+      <Carousel> 
+      {Object.keys(this.state.imageDescriptionWeatherData).length > 0 && this.state.imageDescriptionWeatherData.images.map(image => <Carousel.Item><img src= {image.url} width="300px"/></Carousel.Item>)}
+      </Carousel>
+      {<p>{this.state.imageDescriptionWeatherData.description}</p>}
+      <Button variant="success">Save to My Parks</Button>
+
 
       </>
 
