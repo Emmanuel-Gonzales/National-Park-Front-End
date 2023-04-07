@@ -1,0 +1,60 @@
+body {
+  background-image: url(https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* width: 100%; */
+  /* border: 2px solid; */
+  /* color: green; */
+  resize: both;
+  overflow: scroll;
+  height: 100%;
+}
+/* html {
+  height: 100%;
+  width: 100%;
+} */
+
+.hero-container {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(2, 36, 17, 0.2);
+  object-fit: contain;
+}
+
+.hero-container > h1 {
+  color: #fff;
+  font-size: 75px;
+  margin-top: 75px;
+}
+
+.hero-container > p {
+  margin-top: 8px;
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.hero-btns {
+  margin-top: 32px;
+}
+
+.hero-btns .btn {
+  margin: 6px;
+}
+
+.fa-play-circle {
+  margin-left: 4px;
+}
+
+MyParks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
+
