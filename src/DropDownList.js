@@ -4,7 +4,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 // import { act } from "react-dom/test-utils";
 import Table from 'react-bootstrap/Table';
 import { withRouter } from "./WithRouter";
-import './DropDownList.css'
+import './DropDownList.css';
+import {Col,Row} from "react-bootstrap"
 
 class DropDownList extends React.Component {
   constructor(props) {
@@ -81,11 +82,17 @@ class DropDownList extends React.Component {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            {this.state.activities.length && this.state.activities.map(activity => <Dropdown.Item key={`item-${activity.id}`} eventKey={activity.id}>{activity.name}</Dropdown.Item>)}
+            <Row xs={3} sm={2} md={3} lg={4}>
+            {this.state.activities.length && this.state.activities.map(activity => (
+              <Col>
+            <Dropdown.Item key={`item-${activity.id}`} eventKey={activity.id}>{activity.name}</Dropdown.Item>
+              </Col>
+            ))}
 
             {/* <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
           <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item> */}
+          </Row>
           </Dropdown.Menu>
         </Dropdown>
         <div className="my-table-container"> 

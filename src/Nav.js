@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import LoginButton from "./Login";
 import './Nav.css';
+
 
 function Nav() {
   const [click, setClick] = useState(false);
@@ -43,7 +45,7 @@ function Nav() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/services'
+                to='/about'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
@@ -52,7 +54,7 @@ function Nav() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/products'
+                to='/parkdata'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
@@ -62,16 +64,16 @@ function Nav() {
 
             <li>
               <Link
-                to='/sign-up'
+                to='/login'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
-                Sign Up
+                Login
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
-        </div>
+          {button && <LoginButton />}        
+          </div>
       </nav>
     </>
   );
