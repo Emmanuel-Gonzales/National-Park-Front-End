@@ -16,6 +16,7 @@ class ParkData extends React.Component {
   //   }
   // }
 
+
   createUserPark = async () => {
     let parkObj = {
       parkName: this.props.selectedPark.name,
@@ -33,8 +34,8 @@ class ParkData extends React.Component {
 
       let createdPark = await axios.post(url, parkObj);
 
-      
-      this.props.handleCreatePark(createdPark);
+      console.log(createdPark, "created park");
+      // this.props.handleCreatePark(createdPark);
 
       alert("Park Saved!");
      
@@ -46,7 +47,6 @@ class ParkData extends React.Component {
 
   render() {
 
-    console.log(this.props)
     return (
       <>
       <div className="top-container">
