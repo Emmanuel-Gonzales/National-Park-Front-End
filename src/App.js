@@ -11,7 +11,7 @@ import MyParks from './MyParks';
 import Login from "./Login";
 import Logout from "./Logout";
 import Profile from "./Profile";
-import'./App.css'
+import './App.css'
 import Footer from './Footer';
 import {
   BrowserRouter as Router,
@@ -28,7 +28,7 @@ class App extends React.Component {
       imageDescriptionWeatherData: {}
     }
   }
-  
+
 
   getParkDetails = async (parkObj) => {
     try {
@@ -37,7 +37,7 @@ class App extends React.Component {
 
       let imageDescrData = await axios.get(url);
       console.log(imageDescrData);
-      
+
       this.setState({
         imageDescriptionWeatherData: imageDescrData.data
       })
@@ -46,7 +46,7 @@ class App extends React.Component {
       console.error(error.response);
     }
   }
-  
+
   selectedParkFunction = (parkObj) => {
     this.setState({
       selectedPark: parkObj
@@ -59,7 +59,7 @@ class App extends React.Component {
   //     myParks: [...this.state.myParks, createdPark.data]
   //   })
   // }
-  
+
   render() {
     return (
       <>
@@ -71,10 +71,30 @@ class App extends React.Component {
           <Routes>
             <Route
               exact path="/"
-              element={<DropDownList 
-                selectedParkFunction={this.selectedParkFunction}
-                getParkDetails={this.getParkDetails}
-                />}
+              element={
+                <>
+                  <div className='hero-container'>
+                  
+                    <h1><i className='fa fa-tree' />WELCOME TO YOUR NATIONAL PARKS</h1>
+                    <p>SEARCH DIRECTORY</p>
+                    {/* <div className='hero-btns'> */}
+                      {/* <Button */}
+                        {/* className='btns' */}
+                        {/* buttonStyle='btn--outline' */}
+                        {/* buttonSize='btn--large' */}
+                      {/* > */}
+                        {/* GET STARTED */}
+                      {/* </Button> */}
+                    {/* </div> */}
+                  </div>
+                  <div className='page-container'>
+                  </div>
+                  <DropDownList
+                    selectedParkFunction={this.selectedParkFunction}
+                    getParkDetails={this.getParkDetails}
+                  />
+                </>
+              }
             >
             </Route>
             <Route
@@ -89,41 +109,25 @@ class App extends React.Component {
             <Route
               exact path="/About"
               element={<About />}
-              >
+            >
             </Route>
-              <Route
+            <Route
               exact path="/MyParks"
               element={<MyParks
-               
+
                 // myParks={this.state.myParks}
-                
+
                 updateUserPark={this.updateUserPark}
                 deleteUserPark={this.deleteUserPark}
               />}
             >
             </Route>
           </Routes>
-          {/* <Footer/> */}
+          <Footer />
         </Router>
-        {/* <div className='hero-container'> */}
-        {/* <h1>WELCOME TO YOUR NATIONAL PARKS</h1>
-      <p>SEARCH DIRECTORY</p>
-      <div className='hero-btns'>
-        <Button
-          className='btns'
-          buttonStyle='btn--outline'
-          buttonSize='btn--large'
-        >
-          GET STARTED
-        </Button>
-        </div>
-      </div>
-        <div className='page-container'>
-      {/* <Footer/> */}
-    {/* </div> */}
       </>
-      )
-    }
+    )
   }
-  
-  export default App
+}
+
+export default App

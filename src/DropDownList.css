@@ -1,5 +1,7 @@
 .my-table-container {
   max-width: fit-content;
+  margin-bottom: 40%;
+  height: 100%;
   /* margin: left; */
 }
 
