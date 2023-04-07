@@ -1,0 +1,7 @@
+.figure{
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  background-color: #242222;
+  border: solid rgb(25, 135, 84) 3px;
+}
