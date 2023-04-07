@@ -23,7 +23,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       selectedPark: {},
-      myParks: [],
+      //myParks: [],//dont need
       imageDescriptionWeatherData: {}
     }
   }
@@ -52,59 +52,13 @@ class App extends React.Component {
     })
   }
 
-  handleCreatePark = (createdPark) => {
-    console.log(createdPark.data);
-    this.setState({
-      myParks: [...this.state.myParks, createdPark.data]
-    })
-  }
+  // handleCreatePark = (createdPark) => {
+  //   console.log(createdPark.data);
+  //   this.setState({
+  //     myParks: [...this.state.myParks, createdPark.data]
+  //   })
+  // }
   
-  getMyParks = () => {
-    let temp = this.state.myParks;
-    return temp;
-  }
-
-  updateUserPark = async (parkDataToUpdate) => {
-    try {
-      let url = `${process.env.REACT_APP_SERVER}/parks/${parkDataToUpdate._id}`;
-  
-      let updatedPark = await axios.put(url, parkDataToUpdate);
-  
-      
-      let updatedParksArray = this.props.myParks.map(existingPark => {
-          return existingPark._id === parkDataToUpdate._id ? updatedPark.data
-            : existingPark
-        })
-  
-      this.setState({
-        myParks: updatedParksArray
-      })
-  
-    } catch (error) {
-        console.log(error.message)
-    }
-  }
-  
-  deleteUserPark = async (id) => {
-    try {
-      let url = `${process.env.REACT_APP_SERVER}/parks/${id}`;
-  
-      await axios.delete(url);
-  
-      let deletePark = this.state.userParkData.filter(park => park._id !== id);
-  
-      this.setState({
-        myParks: deletePark
-      }) 
-  
-    } catch (error) {
-        console.log(error.response)
-    }
-  }
-
-
-
-
   render() {
     return (
       <>
@@ -140,7 +94,7 @@ class App extends React.Component {
               exact path="/MyParks"
               element={<MyParks
                
-                myParks={this.state.myParks}
+                // myParks={this.state.myParks}
                 
                 updateUserPark={this.updateUserPark}
                 deleteUserPark={this.deleteUserPark}
