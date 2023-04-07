@@ -28,7 +28,7 @@ body {
 .hero-container > h1 {
   color: #fff;
   font-size: 75px;
-  /* margin-top: -75px; */
+  margin-top: 75px;
 }
 
 .hero-container > p {

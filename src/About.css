@@ -11,8 +11,8 @@
 
 .hero-container > h1 {
   color: #fff;
-  font-size: 25px;
-  background-color: black;
+  /* font-size: 25px; */
+  /* background-color: black; */
   /* margin-top: -75px; */
 }
 
@@ -20,7 +20,10 @@
   margin-top: 8px;
   color: #fff;
   text-align: center;
-  font-size: 60px;
+  /* font-size: 75px; */
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
+}
+.textName {
+  font-size: 80px;
 }
