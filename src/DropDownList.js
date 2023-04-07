@@ -47,13 +47,13 @@ class DropDownList extends React.Component {
       let url = `${process.env.REACT_APP_SERVER}/activityParks?activityID=${id}`;
 
       let parkData = await axios.get(url);
+      console.log(parkData.data)
 
       this.setState({
-        parkData: parkData.data,
+        parkData: parkData.data.slice(0, 10),
         parkCode: parkData.data.parkCode
       })
       console.log(this.state.parkCode)
-    
 
     } catch (error) {
       console.error(error.response);
@@ -89,7 +89,7 @@ class DropDownList extends React.Component {
           </Dropdown.Menu>
         </Dropdown>
         <div className="my-table-container"> 
-        <Table striped bordered hover> 
+        <Table bordered hover> 
         <tbody>
         {this.state.parkData.length > 0 ? 
         this.state.parkData.map(park =><tr> <td className="text-center" onClick={() => {this.handleParkNavigation(park)}}>{park.name} ({park.locations})</td></tr>)
