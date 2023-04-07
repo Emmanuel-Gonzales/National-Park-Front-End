@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import About from './About';
 import "./App.css";
 import MyParks from './MyParks';
-import Logout from "./Logout"
 import Profile from "./Profile";
 import Footer from './Footer';
 import {

@@ -9,7 +9,7 @@ import LogoutButton from './Logout';
 function Nav() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-
+  console.log(button)
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
