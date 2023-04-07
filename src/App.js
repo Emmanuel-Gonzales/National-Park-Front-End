@@ -11,7 +11,6 @@ import MyParks from './MyParks';
 import Login from "./Login";
 import Logout from "./Logout";
 import Profile from "./Profile";
-import './App.css'
 import Footer from './Footer';
 import {
   BrowserRouter as Router,
@@ -67,7 +66,7 @@ class App extends React.Component {
         <Nav />
           {/* <Login /> */}
           <Profile />
-          {/* <Logout /> */}
+          <Logout />
           <Routes>
             <Route
               exact path="/"
@@ -75,8 +74,9 @@ class App extends React.Component {
                 <>
                   <div className='hero-container'>
                   
-                    <h1><i className='fa fa-tree' />WELCOME TO YOUR NATIONAL PARKS</h1>
+                    <h1>WELCOME TO YOUR NATIONAL PARKS</h1>
                     <p>SEARCH DIRECTORY</p>
+                    {/* <i className='fa fa-tree' /> */}
                     {/* <div className='hero-btns'> */}
                       {/* <Button */}
                         {/* className='btns' */}
