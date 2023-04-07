@@ -56,12 +56,9 @@ class MyParkCard extends React.Component {
                 Update Park Commentary
               </Button>
             </Form>
-
-            <Form onSubmit={()=> this.props.deleteUserPark(this.props._id)}>
-              <Button variant="primary" type="submit">
-                Delete Park
+                <Button variant="primary" type="click" onClick={()=> this.props.deleteUserPark(this.props._id)}>
+                 Delete Park
               </Button>
-            </Form>
 
           </Card.Body>
         </Card>
