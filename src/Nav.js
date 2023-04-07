@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import LoginButton from "./Login";
 import './Nav.css';
@@ -54,11 +54,11 @@ function Nav() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/parkdata'
+                to='/myParks'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Park Data
+                My Parks
               </Link>
             </li>
 
