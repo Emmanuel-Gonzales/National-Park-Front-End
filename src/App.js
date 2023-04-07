@@ -63,11 +63,11 @@ class App extends React.Component {
   render() {
     return (
       <>
-        {/* <Nav /> */}
         <Router>
-          <Login />
+        <Nav />
+          {/* <Login /> */}
           <Profile />
-          <Logout />
+          {/* <Logout /> */}
           <Routes>
             <Route
               exact path="/"
