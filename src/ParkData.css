@@ -19,3 +19,18 @@ img{
   height: 30em;
   object-fit: cover;
 }
+
+p{
+  color: #E0FFFF;
+  width: 60%;
+  margin: auto;
+}
+
+.top-container{
+  background-color: #242424;
+}
+
+
+h1{
+  color: #E0FFFF;
+}

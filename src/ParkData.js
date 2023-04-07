@@ -49,9 +49,11 @@ class ParkData extends React.Component {
     console.log(this.props)
     return (
       <>
+      <div className="top-container">
       {<h1>{this.props.selectedPark.name}</h1>}
       <a href={this.props.selectedPark.url}>Visit Park Webpage</a>
       {<p>{this.props.imageDescriptionWeatherData.description}</p>}
+      </div>
       <Carousel> 
       {Object.keys(this.props.imageDescriptionWeatherData).length > 0 && this.props.imageDescriptionWeatherData.images.map(image => 
       <Carousel.Item>
