@@ -2,7 +2,9 @@ import axios from "axios";
 import React from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 // import { act } from "react-dom/test-utils";
+import Table from 'react-bootstrap/Table';
 import { withRouter } from "./WithRouter";
+import './DropDownList.css'
 
 class DropDownList extends React.Component {
   constructor(props) {
@@ -50,7 +52,7 @@ class DropDownList extends React.Component {
         parkData: parkData.data,
         parkCode: parkData.data.parkCode
       })
-
+      console.log(this.state.parkCode)
     
 
     } catch (error) {
@@ -86,10 +88,16 @@ class DropDownList extends React.Component {
         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item> */}
           </Dropdown.Menu>
         </Dropdown>
+        <div className="my-table-container"> 
+        <Table striped bordered hover> 
+        <tbody>
         {this.state.parkData.length > 0 ? 
-        this.state.parkData.map(park => <p key={`item-${park.name}`}  onClick={() => {this.handleParkNavigation(park)}}>{park.name}</p>)
+        this.state.parkData.map(park =><tr> <td className="text-center" onClick={() => {this.handleParkNavigation(park)}}>{park.name} ({park.locations})</td></tr>)
         : null
       }
+      </tbody>
+      </Table>
+      </div>
      
       </>
 

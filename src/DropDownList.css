@@ -1,0 +1,8 @@
+.my-table-container {
+  max-width: fit-content;
+  /* margin: left; */
+}
+
+.table{
+  width: fit-content;
+}

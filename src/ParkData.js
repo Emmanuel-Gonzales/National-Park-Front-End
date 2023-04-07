@@ -4,6 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 import './ParkData.css'
 
+// handleParkSubmit = (event) => {
+
+
 
 class ParkData extends React.Component {
   // constructor(props) {
@@ -44,18 +47,20 @@ class ParkData extends React.Component {
 
   render() {
 
-
     return (
       <>
-
       {<h1>{this.props.selectedPark.name}</h1>}
-      <Carousel> 
-      {Object.keys(this.props.imageDescriptionWeatherData).length > 0 && this.props.imageDescriptionWeatherData.images.map(image => <Carousel.Item><img src= {image.url} width="300px"/></Carousel.Item>)}
-      </Carousel>
+      <a href={this.props.selectedPark.url}>Visit Park Webpage</a>
       {<p>{this.props.imageDescriptionWeatherData.description}</p>}
-      <Button onClick={this.createUserPark} variant="success">Save to My Parks</Button>
-
-
+      
+      <Carousel> 
+      {Object.keys(this.props.imageDescriptionWeatherData).length > 0 && this.props.imageDescriptionWeatherData.images.map(image => 
+      <Carousel.Item>
+        <div className="image-container">
+          <img src= {image.url} alt={image.altText}/>
+          </div></Carousel.Item>)}
+      </Carousel>
+      <Button variant="success">Save to My Parks</Button>
       </>
 
     )

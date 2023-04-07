@@ -11,6 +11,7 @@ import MyParks from './MyParks';
 import Login from "./Login";
 import Logout from "./Logout";
 import Profile from "./Profile";
+import'./App.css'
 import Footer from './Footer';
 import {
   BrowserRouter as Router,
