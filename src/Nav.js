@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-// import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import LoginButton from "./Login";
 import './Nav.css';
+import {useAuth0} from '@auth0/auth0-react';
+import LogoutButton from './Logout';
 
 
 function Nav() {
@@ -25,6 +26,8 @@ function Nav() {
   }, []);
 
   window.addEventListener('resize', showButton);
+
+  const {isAuthenticated} = useAuth0();
 
   return (
     <>
@@ -70,10 +73,12 @@ function Nav() {
               >
                 Login
               </Link>
+
             </li>
           </ul>
-          {button && <LoginButton />}        
-          </div>
+          {/* {button && <LoginButton />} */}
+          {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+        </div>
       </nav>
     </>
   );

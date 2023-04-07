@@ -61,7 +61,7 @@ class ParkData extends React.Component {
           <img src= {image.url} alt={image.altText}/>
           </div></Carousel.Item>)}
       </Carousel>
-      <Button variant="success">Save to My Parks</Button>
+      <Button onClick={this.createUserPark} variant="success">Save to My Parks</Button>
       </>
 
     )

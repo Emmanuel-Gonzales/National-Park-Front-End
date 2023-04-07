@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import MyParkCard from './MyParkCard';
+// import './MyParks.css'
 
 
 class MyParks extends React.Component {

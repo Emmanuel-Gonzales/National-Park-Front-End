@@ -51,3 +51,10 @@ body {
 .fa-play-circle {
   margin-left: 4px;
 }
+
+MyParks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
+

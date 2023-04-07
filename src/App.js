@@ -6,10 +6,8 @@ import DropDownList from './DropDownList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import About from './About';
 import "./App.css";
-import Button from 'react-bootstrap/Button';
 import MyParks from './MyParks';
-import Login from "./Login";
-import Logout from "./Logout";
+import Logout from "./Logout"
 import Profile from "./Profile";
 import Footer from './Footer';
 import {
@@ -63,28 +61,27 @@ class App extends React.Component {
     return (
       <>
         <Router>
-        <Nav />
+          <Nav />
           {/* <Login /> */}
           <Profile />
-          <Logout />
           <Routes>
             <Route
               exact path="/"
               element={
                 <>
                   <div className='hero-container'>
-                  
+
                     <h1>WELCOME TO YOUR NATIONAL PARKS</h1>
                     <p>SEARCH DIRECTORY</p>
                     {/* <i className='fa fa-tree' /> */}
                     {/* <div className='hero-btns'> */}
-                      {/* <Button */}
-                        {/* className='btns' */}
-                        {/* buttonStyle='btn--outline' */}
-                        {/* buttonSize='btn--large' */}
-                      {/* > */}
-                        {/* GET STARTED */}
-                      {/* </Button> */}
+                    {/* <Button */}
+                    {/* className='btns' */}
+                    {/* buttonStyle='btn--outline' */}
+                    {/* buttonSize='btn--large' */}
+                    {/* > */}
+                    {/* GET STARTED */}
+                    {/* </Button> */}
                     {/* </div> */}
                   </div>
                   <div className='page-container'>
