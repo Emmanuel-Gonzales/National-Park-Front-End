@@ -16,6 +16,7 @@ class ParkData extends React.Component {
   //   }
   // }
 
+
   createUserPark = async () => {
     let parkObj = {
       parkName: this.props.selectedPark.name,
@@ -33,8 +34,8 @@ class ParkData extends React.Component {
 
       let createdPark = await axios.post(url, parkObj);
 
-      
-      this.props.handleCreatePark(createdPark);
+      console.log(createdPark, "created park");
+      // this.props.handleCreatePark(createdPark);
 
       alert("Park Saved!");
      
@@ -46,12 +47,12 @@ class ParkData extends React.Component {
 
   render() {
 
-    console.log(this.props)
     return (
       <>
       {<h1>{this.props.selectedPark.name}</h1>}
       <a href={this.props.selectedPark.url}>Visit Park Webpage</a>
       {<p>{this.props.imageDescriptionWeatherData.description}</p>}
+      
       <Carousel> 
       {Object.keys(this.props.imageDescriptionWeatherData).length > 0 && this.props.imageDescriptionWeatherData.images.map(image => 
       <Carousel.Item>
