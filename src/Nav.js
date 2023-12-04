@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import LoginButton from "./Login";
+// import LoginButton from "./Login";
 import './Nav.css';
-import {useAuth0} from '@auth0/auth0-react';
-import LogoutButton from './Logout';
+// import {useAuth0} from '@auth0/auth0-react';
+// import LogoutButton from './Logout';
 
 
 function Nav() {
@@ -27,7 +27,7 @@ function Nav() {
 
   window.addEventListener('resize', showButton);
 
-  const {isAuthenticated} = useAuth0();
+  // const {isAuthenticated} = useAuth0();
 
   return (
     <>
