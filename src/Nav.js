@@ -77,7 +77,7 @@ function Nav() {
             </li>
           </ul>
           {/* {button && <LoginButton />} */}
-          {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+          {/* {isAuthenticated ? <LogoutButton /> : <LoginButton />} */}
         </div>
       </nav>
     </>
